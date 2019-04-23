@@ -13,7 +13,7 @@ namespace SpecificationPattern.Demo.Infrastructure.Configuration
                 .AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString))
                 .BuildServiceProvider();
 
-            services.AddSpecificatR();
+            services.AddSpecificatR<ApplicationContext>();
 
             return services;
         }
