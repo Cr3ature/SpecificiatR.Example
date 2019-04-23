@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Demo time</h1>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="btn">
+                <form method="post" asp-page-handler="GetAllCharactersNoneIncludes">
+                    <button type="submit" class="btn">Get all characters without includes</button>
+                </form>
+            </div>
+            <div class="btn">
+                <form method="post" asp-page-handler="GetAllCharactersWithAllIncluded">
+                    <button type="submit" class="btn">Get all characters with all included</button>
+                </form>
+            </div>
+            <div class="btn">
+                <form method="post" asp-page-handler="GetCharactersWithFriendsFromTatooine">
+                    <button type="submit" class="btn">Get all characters with friends from Tatooine</button>
+                </form>
+            </div>
+            <div class="btn">
+                <form method="post" asp-page-handler="GetAllCharactersOfTypeHuman">
+                    <button type="submit" class="btn">Get all characters of type human</button>
+                </form>
+            </div>
+            <hr />
+            <div class="btn">
+                <form method="post" asp-page-handler="GetAllEpisodes">
+                    <button type="submit" class="btn">Get all episodes</button>
+                </form>
+            </div>
+            <div class="btn">
+                <form method="post" asp-page-handler="GetAllEpisodesOrderedOnTitle">
+                    <button type="submit" class="btn">Get all episodes ordered on Title</button>
+                </form>
+            </div>
+            <div class="btn">
+                <form method="post" asp-page-handler="GetFirstPagedEpisodes">
+                    <button type="submit" class="btn">Get paged episodes (page 1, 3 per page)</button>
+                </form>
+            </div>
+            <div class="btn">
+                <form method="post" asp-page-handler="GetSecondPagedEpisodes">
+                    <button type="submit" class="btn">Get paged episodes (page 2, 3 per page)</button>
+                </form>
+            </div>
+            <div class="btn">
+                <form method="post" asp-page-handler="GetThirdPagedEpisodes">
+                    <button type="submit" class="btn">Get paged episodes (page 3, 3 per page)</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-8">
+            <pre class="jsonContainer">
+             @Model.Result
+            </pre>
+        </div>
+    </div>
+</div>
